@@ -17,11 +17,11 @@
         <span>MRK Academy</span>
       </div>
       <nav class="nav">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#programs">Programs</a>
-        <a href="./tournaments">Tournaments</a>
-        <a href="./contact">Contact</a>
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#programs" class="nav-link">Programs</a>
+        <a href="./tournaments" class="nav-link">Tournaments</a>
+        <a href="./contact" class="nav-link">Contact</a>
       </nav>
       <div class="hamburger" id="hamburger">
         <span></span>
@@ -70,7 +70,8 @@
       <div class="sport-item">
         <a href="our-sports/athletics.html">
           <div class="icon-container">
-            <img src="athletics-icon.png" alt="Athletics">
+            <i class="fa-solid fa-person-running"></i>
+            <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJ9tPnvHtedQPq6thaa2uOh4D--V7bMz-Z2g&s" alt="Athletics"> -->
           </div>
           <h3>Athletics</h3>
           <p>Get into top shape with our athletics programs, including running and field events.</p>
@@ -80,7 +81,8 @@
       <div class="sport-item">
         <a href="our-sports/basketball.html">
           <div class="icon-container">
-            <img src="basketball-icon.png" alt="Basketball">
+            <i class="fa-solid fa-basketball"></i>
+            <!-- <img src="basketball-icon.png" alt="Basketball"> -->
           </div>
           <h3>Basketball</h3>
           <p>Enhance your skills with our basketball training sessions.</p>
@@ -90,7 +92,8 @@
       <div class="sport-item">
         <a href="our-sports/cricket.html">
           <div class="icon-container">
-            <img src="cricket-icon.png" alt="Cricket">
+            <i class="fas fa-cricket"></i>
+            <!-- <img src="cricket-icon.png" alt="Cricket"> -->
           </div>
           <h3>Cricket</h3>
           <p>Join our cricket academy and learn batting, bowling, and fielding techniques.</p>
@@ -100,10 +103,11 @@
       <div class="sport-item">
         <a href="our-sports/tennis.html">
           <div class="icon-container">
-            <img src="tennis-icon.png" alt="Tennis">
+            <i class="fa-solid fa-tennis-ball"></i>
+            <!-- <img src="tennis-icon.png" alt="Tennis"> -->
           </div>
           <h3>Tennis</h3>
-          <p>Take your game to the next level with personalized tennis coaching.</p>
+          <p class="description-tennis">Take your game to the next level with personalized tennis coaching.</p>
           <h5 class="detail-button">Details <i class="fa-solid fa-chevron-right"></i></h5>
         </a>
       </div>
@@ -120,7 +124,8 @@
       <div class="sport-item">
         <a href="our-sports/badminton.html">
           <div class="icon-container">
-            <img src="badminton-icon.png" alt="Badminton">
+            <!-- <img src="badminton-icon.png" alt="Badminton"> -->
+            <i class="fa-solid fa-badminton"></i>
           </div>
           <h3>Badminton</h3>
           <p>Learn the fundamentals and advanced techniques of badminton with our experienced coaches.</p>
@@ -133,7 +138,7 @@
             <img src="kho-kho-icon.png" alt="Kho-Kho">
           </div>
           <h3>Kho-Kho</h3>
-          <p>Experience the excitement of Kho-Kho, a traditional Indian tag sport.</p>
+          <p style="height: 26%;">Experience the excitement of Kho-Kho, a traditional Indian tag sport.</p>
           <h5 class="detail-button">Details <i class="fa-solid fa-chevron-right"></i></h5>
         </a>
       </div>
@@ -143,7 +148,7 @@
             <img src="kabaddi-icon.png" alt="Kabaddi">
           </div>
           <h3>Kabaddi</h3>
-          <p>Join our Kabaddi sessions and master this intense and strategic sport.</p>
+          <p style="height: 26%;">Join our Kabaddi sessions and master this intense and strategic sport.</p>
           <h5 class="detail-button">Details <i class="fa-solid fa-chevron-right"></i></h5>
         </a>
       </div> 
@@ -285,14 +290,23 @@
 
 
   <script>
-    // Hamburger menu toggle
+    // Get references to the elements
     const hamburger = document.getElementById('hamburger');
     const nav = document.querySelector('.nav');
-
+    const navLinks = document.querySelectorAll('.nav-link');
+  
+    // Toggle the 'active' class when the hamburger is clicked
     hamburger.addEventListener('click', () => {
       nav.classList.toggle('active');
     });
-  </script>
+  
+    // Close the nav menu when any link is clicked
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('active'); // Close the nav menu
+      });
+    });
+  </script>  
 
 <script>
     // Function to trigger the count-up effect
