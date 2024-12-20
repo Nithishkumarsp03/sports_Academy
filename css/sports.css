@@ -1,0 +1,220 @@
+/* General styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text color */
+  }
+  
+  /* Container for the whole page */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Heading and section title */
+  h1, h2, h3 {
+    text-align: center;
+    color: #fff; /* White text color */
+    animation: fadeIn 1s ease-out;
+  }
+  
+  /* Page title style */
+  h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+  }
+  
+  h3 {
+    font-size: 1.8em;
+    color: #00bcd4; /* Light blue color */
+  }
+  
+  /* About athletics section */
+  .about-athletics {
+    background-color: #1c1c1c; /* Dark background */
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    margin-bottom: 50px;
+    animation: slideInUp 1s ease-out;
+  }
+  
+  .about-athletics p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #ccc; /* Lighter text for readability */
+  }
+  
+  /* Fees section */
+  .fees-section {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    animation: fadeInUp 1s ease-out;
+  }
+  
+  .fees-section .fee-plan {
+    background-color: #2a2a2a; /* Dark background */
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    width: 45%;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .fees-section .fee-plan h4 {
+    font-size: 1.6em;
+    color: #00bcd4; /* Light blue */
+    margin-bottom: 15px;
+  }
+  
+  .fees-section .fee-plan p {
+    font-size: 1.2em;
+    color: #ccc;
+  }
+  
+  .fees-section .fee-plan .amount {
+    font-size: 2em;
+    font-weight: bold;
+    color: #f44336; /* Red for the amount */
+    margin: 15px 0;
+  }
+  
+  .fees-section .fee-plan:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+  }
+  
+  /* Registration form */
+  .registration-form {
+    margin-top: 50px;
+    background-color: #1c1c1c; /* Dark background */
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    animation: slideInUp 1s ease-out;
+  }
+  
+  .registration-form h3 {
+    font-size: 1.8em;
+    color: #fff;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Input and select fields */
+  .input-group {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  .input-group input,
+  .input-group select {
+    width: 100%;
+    padding: 15px 10px;
+    border: 2px solid #555;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    font-size: 1em;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+  
+  .input-group input:focus,
+  .input-group select:focus {
+    border-color: #00bcd4;
+    box-shadow: 0 0 5px rgba(0, 188, 212, 0.7);
+  }
+  
+  .input-group .input-border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+  }
+  
+  .input-group input:focus ~ .input-border,
+  .input-group select:focus ~ .input-border {
+    background-color: #00bcd4;
+  }
+  
+  button {
+    padding: 15px;
+    width: 100%;
+    background-color: #00bcd4;
+    color: #fff;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #008c99;
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    background-color: #121212; /* Dark footer background */
+    color: #ccc; /* Light footer text */
+    padding: 20px 0;
+    margin-top: 50px;
+    animation: fadeIn 1s ease-out;
+  }
+  
+  footer a {
+    color: #00bcd4; /* Light blue for links */
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Animation Keyframes */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes slideInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

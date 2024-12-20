@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upcoming Tournaments - Sports Academy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tournament.css">
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>Upcoming Tournaments</h1>
+    </header>
+
+    <!-- Filter and Search Section -->
+    <section class="filter-search">
+      <div class="filter">
+        <label for="sports-filter">Filter by Sport:</label>
+        <select id="sports-filter">
+          <option value="all">All Sports</option>
+          <option value="athletics">Athletics</option>
+          <option value="basketball">Basketball</option>
+          <option value="cricket">Cricket</option>
+          <option value="tennis">Tennis</option>
+          <option value="handball">Handball</option>
+          <option value="badminton">Badminton</option>
+          <option value="kho-kho">Kho-Kho</option> <!-- Fixed: Match the data-sport value -->
+          <option value="kabaddi">Kabaddi</option> <!-- Fixed: Match the data-sport value -->
+        </select>
+      </div>
+      <div class="search">
+        <label for="search-tournament">Search Tournaments:</label>
+        <input type="text" id="search-tournament" placeholder="Enter tournament name">
+      </div>
+    </section>
+
+    <!-- Tournament List Section -->
+    <section class="tournament-list">
+      <h2>All Tournaments</h2>
+      <ul id="tournament-items">
+        <li data-sport="athletics">
+          <h3>National Athletics Meet 2024</h3>
+          <p>Date: March 15, 2024</p>
+          <p>Location: Delhi</p>
+        </li>
+        <li data-sport="basketball">
+          <h3>Inter-University Basketball Championship</h3>
+          <p>Date: April 10, 2024</p>
+          <p>Location: Mumbai</p>
+        </li>
+        <li data-sport="cricket">
+          <h3>All India Cricket Cup</h3>
+          <p>Date: February 20, 2024</p>
+          <p>Location: Bengaluru</p>
+        </li>
+        <li data-sport="tennis">
+          <h3>Open Tennis Tournament</h3>
+          <p>Date: May 5, 2024</p>
+          <p>Location: Chennai</p>
+        </li>
+        <li data-sport="handball">
+          <h3>State Handball League</h3>
+          <p>Date: June 18, 2024</p>
+          <p>Location: Kolkata</p>
+        </li>
+        <li data-sport="badminton">
+          <h3>National Badminton Championship</h3>
+          <p>Date: July 12, 2024</p>
+          <p>Location: Hyderabad</p>
+        </li>
+        <!-- Added two new sports -->
+        <li data-sport="kho-kho">
+          <h3>National Kho-Kho Championship</h3>
+          <p>Date: August 25, 2024</p>
+          <p>Location: Pune</p>
+        </li>
+        <li data-sport="kabaddi">
+          <h3>All India Kabaddi Tournament</h3>
+          <p>Date: September 10, 2024</p>
+          <p>Location: Jaipur</p>
+        </li>
+      </ul>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 MRK Academy | <a href="../contact/">Contact Us</a></p>
+  </footer>
+
+  <script>
+    // JavaScript for filter and search functionality
+    const filter = document.getElementById('sports-filter');
+    const search = document.getElementById('search-tournament');
+    const tournamentItems = document.querySelectorAll('#tournament-items li');
+
+    function filterTournaments() {
+      const selectedSport = filter.value.toLowerCase();
+      const searchTerm = search.value.toLowerCase();
+
+      tournamentItems.forEach(item => {
+        const sport = item.getAttribute('data-sport');
+        const name = item.querySelector('h3').textContent.toLowerCase();
+
+        if (
+          (selectedSport === 'all' || sport === selectedSport) &&
+          name.includes(searchTerm)
+        ) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    filter.addEventListener('change', filterTournaments);
+    search.addEventListener('input', filterTournaments);
+  </script>
+</body>
+</html>

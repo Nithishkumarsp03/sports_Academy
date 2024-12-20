@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Sports Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/contact.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Contact Us</h1>
+        <p>We'd love to hear from you! Reach out to us for any queries or assistance.</p>
+
+        <div class="form-container">
+            <!-- Replace the action attribute with the Formspree URL -->
+            <form id="contact-form" action="https://formspree.io/f/xbljvwyd" method="POST" onsubmit="handleFormSubmit(event)">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+
+        <div class="contact-info">
+            <div><i class="fas fa-phone-alt"></i> +91 99768 59400</div>
+            <div><i class="fas fa-envelope"></i> mmraj27@gmail.com</div>
+            <div><i class="fas fa-map-marker-alt"></i> 123 Sports Academy Lane, NY, USA</div>
+        </div>
+    </div>
+
+    <!-- Font Awesome CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault(); // Prevents page reload on form submission
+
+            // Create a FormData object from the form
+            const form = document.getElementById('contact-form');
+            const formData = new FormData(form);
+
+            // Use fetch to send form data to Formspree
+            fetch(form.action, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.ok) {
+                    // Reset the form fields
+                    form.reset();
+                    alert('Your message has been sent successfully!');
+                } else {
+                    alert('There was an error sending your message. Please try again.');
+                }
+            })
+            .catch(error => {
+                alert('Your message has been sent successfully!');
+            });
+        }
+    </script>
+</body>
+</html>
